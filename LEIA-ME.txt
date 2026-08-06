@@ -1,0 +1,29 @@
+ANELINE ASSIS — PÁGINA "LINK NA BIO"
+======================================
+
+Conteúdo deste pacote:
+- index.html → a página completa, pronta para uso.
+  Todas as imagens (foto, logo e marca d'água) já estão
+  embutidas dentro do próprio arquivo HTML (em base64),
+  então não existem arquivos soltos de imagem: basta
+  hospedar esse único arquivo.
+
+Como publicar:
+1. Envie o index.html para o serviço de hospedagem escolhido
+   (ex: Hostinger, Netlify, Vercel, GitHub Pages, ou o mesmo
+   provedor da landing page completa).
+2. Aponte o link da bio do Instagram para a URL publicada.
+
+Antes de publicar, confira/ajuste no arquivo:
+- Número de WhatsApp usado nos botões (atualmente
+  55 11 92012-4717, extraído do material de identidade
+  visual enviado).
+- Link do botão "Conheça meu trabalho" (atualmente
+  www.anelineassis.com.br — troque pela URL real da
+  landing page completa, se for diferente).
+- Link do Instagram (atualmente
+  instagram.com/neuropsicopedagoga.aneline).
+
+Qualquer ajuste de texto, cor ou link pode ser feito
+diretamente nas tags <a href="..."> e no bloco <style>
+no topo do arquivo.
