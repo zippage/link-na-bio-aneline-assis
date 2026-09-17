@@ -1,29 +1,88 @@
-ANELINE ASSIS — PÁGINA "LINK NA BIO"
-======================================
+LINK NA BIO — ANELINE ASSIS (NEUROPSICOPEDAGOGA CLÍNICA)
+==========================================================
 
-Conteúdo deste pacote:
-- index.html → a página completa, pronta para uso.
-  Todas as imagens (foto, logo e marca d'água) já estão
-  embutidas dentro do próprio arquivo HTML (em base64),
-  então não existem arquivos soltos de imagem: basta
-  hospedar esse único arquivo.
+Sobre o projeto
+----------------
+Página "link na bio" para o Instagram da Aneline Assis, neuropsicopedagoga
+clínica de Moema/Vila Mariana (SP). É a página que abre quando alguém toca
+no link do perfil dela — geralmente uma mãe ou pai que acabou de ver um
+post ou story e quer decidir rápido entre duas coisas: chamar no WhatsApp
+ou conhecer o trabalho completo (a landing page). Diferente da landing
+page, aqui não tem espaço para explicar processo ou construir confiança
+aos poucos — a pessoa decide em segundos, então tudo foi pensado para
+caber numa tela de celular sem rolar muito e ir direto ao ponto.
 
-Como publicar:
-1. Envie o index.html para o serviço de hospedagem escolhido
-   (ex: Hostinger, Netlify, Vercel, GitHub Pages, ou o mesmo
-   provedor da landing page completa).
-2. Aponte o link da bio do Instagram para a URL publicada.
+Por que é um arquivo único
+----------------------------
+Todo o HTML, CSS e JavaScript estão em `index.html`, e as três imagens
+(foto da Aneline, logo/selo e a marca d'água de fundo) estão embutidas
+como base64 dentro do próprio arquivo. Não é a abordagem que eu usaria
+para a landing page principal (lá faz sentido separar assets, é um site
+maior e vai crescer), mas para uma página de link-in-bio — um único
+arquivo, sem seções, vida útil de poucos meses até a próxima atualização
+de identidade — o ganho de simplicidade (1 arquivo pra hospedar, sem
+pasta de assets pra gerenciar) compensa o HTML ficar pesado de ler.
 
-Antes de publicar, confira/ajuste no arquivo:
-- Número de WhatsApp usado nos botões (atualmente
-  55 11 92012-4717, extraído do material de identidade
-  visual enviado).
-- Link do botão "Conheça meu trabalho" (atualmente
-  www.anelineassis.com.br — troque pela URL real da
-  landing page completa, se for diferente).
-- Link do Instagram (atualmente
-  instagram.com/neuropsicopedagoga.aneline).
+Identidade visual
+-------------------
+Usa as mesmas variáveis de cor da landing page completa, sincronizadas
+manualmente (é um arquivo isolado, não compartilha `variables.css` com
+o outro projeto):
+- `--verde` / `--verde-escuro`: verde de marca, igual ao `--color-green-800`
+  / `--color-green-900` da landing page.
+- `--dourado`: dourado usado no texto (rótulo "Neuropsicopedagoga
+  Clínica", ícones). Mantive este num tom mais vívido (`#C89A2C`) por
+  pedido direto da cliente — ela testou a versão mais "segura" de
+  contraste (mais próxima do padrão de acessibilidade) e preferiu o
+  dourado mais aberto, com mais cara de dourado mesmo. Em texto desse
+  tamanho (caixa alta, negrito, curto) a perda de contraste é pequena
+  na prática, mas é uma troca consciente — não uma falha de acessibilidade
+  passada despercebida.
+- `--dourado-claro`: usado só em bordas/hover, sem restrição de leitura.
 
-Qualquer ajuste de texto, cor ou link pode ser feito
-diretamente nas tags <a href="..."> e no bloco <style>
-no topo do arquivo.
+Se um dia vocês atualizarem a paleta da landing page, este arquivo
+precisa ser atualizado à mão também — não há import nem variável
+compartilhada entre os dois projetos.
+
+Decisões de conteúdo
+----------------------
+- O avatar usa a mesma foto da Hero da landing page (pedido da cliente,
+  por achar a foto anterior "artificial"), recortada em formato quadrado
+  focando rosto e ombros — o crop foi feito especificamente para esse
+  círculo de 128px, não é a mesma imagem redimensionada sem critério.
+- O selo pequeno sobreposto no canto da foto usa o símbolo da marca
+  (o cérebro da logo). É uma forma de reforçar identidade visual sem
+  depender só de texto — testei o mesmo símbolo como ícone dentro do
+  card "Como posso ajudar?" primeiro, mas em ~20px os traços finos do
+  desenho ficam ilegíveis; no selo de 34px ele ainda funciona bem.
+- O antigo traço decorativo (— texto —) ao redor do rótulo
+  "Neuropsicopedagoga Clínica" foi removido a pedido da cliente por
+  parecer genérico. Virou uma bolinha antes do texto, o mesmo recurso
+  usado nos eyebrows da landing page — mantém as duas páginas com a
+  mesma "letra".
+- Os 3 itens do card ("Dificuldades de aprendizagem", "Avaliação...",
+  "Orientação familiar") abrem o WhatsApp já com uma mensagem
+  pré-preenchida específica pra cada assunto — não é um link genérico
+  repetido três vezes.
+
+Antes de publicar
+--------------------
+1. Número de WhatsApp: hoje é 55 11 92012-4717 (vem do material de
+   identidade visual enviado) — confirmar se é esse mesmo.
+2. Link do botão "Conheça meu trabalho": hoje aponta para
+   www.anelineassis.com.br — trocar se o domínio final for outro.
+3. Link do Instagram: instagram.com/neuropsicopedagoga.aneline.
+4. O ícone de localização no rodapé abre uma busca genérica do Google
+   Maps por "Moema São Paulo" — vale trocar pelo link direto do
+   endereço real do consultório quando ele estiver definido.
+
+Ideia para uma próxima rodada (não aplicada, para não sobrecarregar a
+página — avaliar com a cliente antes)
+--------------------------------------------------------------------
+Uma linha curta de credencial abaixo da descrição (ex.: "Pedagoga ·
+Pós-graduada em Neuropsicopedagogia Clínica"), no mesmo espírito do
+que já existe na seção "Sobre" da landing page — reforça autoridade
+pra quem ainda não conhece o trabalho dela.
+
+Qualquer ajuste de texto, cor ou link é feito direto nas tags
+`<a href="...">` e no bloco `<style>` no topo do `index.html`.
